@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios"
 import './App.css';
+import Button from '@material-ui/core/Button'
 
 const sendPing = async () => {
   const response = await axios({
@@ -13,7 +14,7 @@ const sendPing = async () => {
 function App() {
   return (
     <div className="App">
-      <button onClick={sendPing}>ping</button>
+      <Button variant="contained" color="primary" onClick={sendPing}>ping</Button>
     </div>
   );
 }
