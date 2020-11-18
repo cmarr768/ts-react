@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios"
 
 type Props = {};
 type State = { firstName: string };
@@ -17,9 +18,16 @@ export class UserFormClass extends React.Component<Props, State> {
         this.setState({ firstName: event.target.value });
     }
 
-    handleSubmit(event: any) {
+    async handleSubmit(event: any) {
         event.preventDefault();
-        alert('Submit name from class ' + this.state.firstName);
+        const response = await axios({
+            method: "post",
+            url: "http://localhost:3001/users",
+            data: {
+                firstName: this.state.firstName
+            }
+        })
+        alert(`Submit name ${this.state.firstName} from class responded with ${JSON.stringify(response.data)}`)
     }
 
     render() {

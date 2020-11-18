@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import axios from "axios"
 
 export const UserFormHooks = () => {
     // Declare a new state variable, which we'll call "count"
     const [firstName, setFirstName] = useState("");
 
-    const handleSubmit = (evt: any) => {
+    const handleSubmit = async (evt: any) => {
         evt.preventDefault();
-        alert(`Submit name from hooks ${firstName}`)
+        const response = await axios({
+            method: "post",
+            url: "http://localhost:3001/users",
+            data: {
+                firstName
+            }
+        })
+        alert(`Submit name ${firstName} from hooks responded with ${JSON.stringify(response.data)}`)
     }
 
     return (
