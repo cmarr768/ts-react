@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from "axios"
+import Button from '@material-ui/core/Button'
+import style from '../css/user-form-class.module.css'
+
 
 type Props = {};
 type State = { firstName: string, lastName: string, address: string, email: string };
@@ -49,8 +52,9 @@ export class UserFormClass extends React.Component<Props, State> {
 
     render() {
         return (
-            <div>
+            <div className={style.classFormWrapper}>
                 <div>
+                    <h1>React Class Form</h1>
                     <label>First Name</label>
                     <input name="First Name" type="text" value={this.state.firstName} onChange={this.handleFirstNameChange}></input>
                     <label>Last Name</label>
@@ -59,10 +63,10 @@ export class UserFormClass extends React.Component<Props, State> {
                     <input name="Address" type="text" value={this.state.address} onChange={this.handleAddressChange}></input>
                     <label>Email</label>
                     <input name="Email" type="text" value={this.state.email} onChange={this.handleEmailChange}></input>
-                </div>
-                <div>
-                    <button onClick={this.handleSubmit}>Submit</button>
-                </div>
+                
+                
+                    <Button variant="contained" color="primary" onClick={this.handleSubmit}>Submit</Button>
+                    </div>
             </div>
         );
     }

@@ -1,0 +1,26 @@
+.classFormWrapper * {
+  margin: 0 auto;
+}
+
+.classFormWrapper div {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 2%;
+  align-items: space-around;
+  padding: 15px 0;
+}
+
+.classFormWrapper h1 {
+  margin: 5px auto;
+}
+
+.classFormWrapper input {
+  width: 75%;
+  margin: 10px auto;
+}
+
+.classFormWrapper button {
+  width: auto;
+}

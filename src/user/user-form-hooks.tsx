@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import axios from "axios"
+import style from '../css/user-form-hooks.module.css'
+import Button from '@material-ui/core/Button'
+import { TextField } from '@material-ui/core'
+
 
 export const UserFormHooks = () => {
     // Declare a new state variable, which we'll call "count"
@@ -24,15 +28,15 @@ export const UserFormHooks = () => {
     }
 
     return (
-        <div>
+        <div className= {style.formWrapper}>
+            <form>
+                <TextField placeholder="First" type="text" value={firstName} onChange={e => setFirstName(e.target.value)} />
+                <TextField placeholder="Last" type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
+                <TextField placeholder="Address" type="text" value={address} onChange={e => setAddress(e.target.value)} />
+                <TextField placeholder="Email" type="text" value={email} onChange={e => setEmail(e.target.value)} />
+            </form>
             <div>
-                <input placeholder="First" type="text" value={firstName} onChange={e => setFirstName(e.target.value)} />
-                <input placeholder="Last" type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
-                <input placeholder="Address" type="text" value={address} onChange={e => setAddress(e.target.value)} />
-                <input placeholder="Email" type="text" value={email} onChange={e => setEmail(e.target.value)} />
-            </div>
-            <div>
-                <button onClick={handleSubmit}>Submit</button>
+                <Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
             </div>
         </div>
     );
