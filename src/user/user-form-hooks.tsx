@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios"
 import style from '../css/user-form-hooks.module.css'
 import Button from '@material-ui/core/Button'
-import { TextField } from '@material-ui/core'
+import { TextField, Grid, Box } from '@material-ui/core'
 
 
 export const UserFormHooks = () => {
@@ -29,15 +29,26 @@ export const UserFormHooks = () => {
 
     return (
         <div className= {style.formWrapper}>
-            <form>
-                <TextField placeholder="First" type="text" value={firstName} onChange={e => setFirstName(e.target.value)} />
-                <TextField placeholder="Last" type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
-                <TextField placeholder="Address" type="text" value={address} onChange={e => setAddress(e.target.value)} />
-                <TextField placeholder="Email" type="text" value={email} onChange={e => setEmail(e.target.value)} />
-            </form>
+            <Box mt={5} px={2}>
+                <form>
+                <h1>React Hooks Form</h1>
+            <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="stretch"
+            spacing={0}
+            >
+                <TextField variant="outlined" label="First" type="text" value={firstName} onChange={e => setFirstName(e.target.value)} />
+                <TextField variant="outlined" label="Last" type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
+                <TextField variant="outlined" label="Address" type="text" value={address} onChange={e => setAddress(e.target.value)} />
+                <TextField variant="outlined" label="Email" type="text" value={email} onChange={e => setEmail(e.target.value)} />
             <div>
                 <Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
             </div>
+            </Grid>
+            </form>
+            </Box>
         </div>
     );
 }
