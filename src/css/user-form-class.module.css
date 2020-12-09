@@ -5,7 +5,7 @@
 .classFormWrapper > div {
   display: flex;
   flex-direction: column;
-  width: 290px;
+  width: 100%;
   border: 1px solid black;
   border-radius: 2%;
   align-items: space-around;
@@ -19,4 +19,19 @@
 .classFormWrapper input {
   width: 75%;
   margin: 10px auto;
+}
+
+@media (min-width: 600px) {
+  .classFormWrapper > div {
+    width: 400px;
+  }
+}
+
+@media (min-width: 900px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1800px) {
 }

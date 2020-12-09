@@ -4,7 +4,7 @@
 
 .formWrapper form {
   display: flex;
-  width: 320px;
+  width: 100%;
   margin: auto;
   flex-direction: column;
   padding: 20px;
@@ -18,4 +18,19 @@
 
 .formWrapper button {
   margin: 15px 0;
+}
+
+@media (min-width: 600px) {
+  .formWrapper form {
+    width: 350px;
+  }
+}
+
+@media (min-width: 900px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1800px) {
 }
